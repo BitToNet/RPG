@@ -10,6 +10,7 @@ public class Character : MonoBehaviour
     public float gravityMultiplier = 2;
     public float rotationSpeed = 5f;
     public float crouchColliderHeight = 1.35f;
+    public bool 显示鼠标 = false;
  
     [Header("Animation Smoothing")]
     [Range(0, 1)]
@@ -69,8 +70,11 @@ public class Character : MonoBehaviour
  
         normalColliderHeight = controller.height;
         gravityValue *= gravityMultiplier;
-        
-        Cursor.lockState = CursorLockMode.Locked;
+
+        if (!显示鼠标)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
  
     private void Update()

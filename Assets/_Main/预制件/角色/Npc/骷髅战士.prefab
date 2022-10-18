@@ -683,7 +683,7 @@ MonoBehaviour:
   hitAudioSource: {fileID: 3761096567318084691, guid: 0d888436fcaaf4bb08b80603597022fe,
     type: 3}
   ragdoll: {fileID: 97764563455741607, guid: f8773465253c24fd881839bdabe03630, type: 3}
-  attackCD: 1
+  attackCD: 2
   attackRange: 2
   aggroRange: 4
 --- !u!195 &1415667248974029926
