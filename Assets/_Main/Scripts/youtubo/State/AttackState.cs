@@ -36,15 +36,19 @@ public class AttackState : State
         base.LogicUpdate();
  
         timePassed += Time.deltaTime;
+        // 获取第二层正在运行的动画的第一个片段的长度
         clipLength = character.animator.GetCurrentAnimatorClipInfo(1)[0].clip.length;
+        // 获取播放速度
         clipSpeed = character.animator.GetCurrentAnimatorStateInfo(1).speed;
  
         if (timePassed >= clipLength / clipSpeed && attack)
         {
+            //攻击2
             stateMachine.ChangeState(character.attacking);
         }
         if (timePassed >= clipLength / clipSpeed)
         {
+            //攻击玩回到战斗状态
             stateMachine.ChangeState(character.combatting);
             character.animator.SetTrigger("move");
         }

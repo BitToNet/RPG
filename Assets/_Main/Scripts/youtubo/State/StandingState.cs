@@ -15,8 +15,6 @@ public class StandingState: State
  
     public StandingState(Character _character, StateMachine _stateMachine) : base(_character, _stateMachine)
     {
-        character = _character;
-        stateMachine = _stateMachine;
     }
  
     public override void Enter()
@@ -31,7 +29,7 @@ public class StandingState: State
         
         currentVelocity = Vector3.zero;
         gravityVelocity.y = 0;
- 
+
         velocity = character.playerVelocity;
         playerSpeed = character.playerSpeed;
         grounded = character.controller.isGrounded;
@@ -104,12 +102,8 @@ public class StandingState: State
         {
             gravityVelocity.y = 0f;
         }
-        Debug.Log("currentVelocity-------："+currentVelocity);
         currentVelocity = Vector3.SmoothDamp(currentVelocity, velocity,ref cVelocity, character.velocityDampTime);
-        Debug.Log("currentVelocity："+currentVelocity);
-        Debug.Log("velocity："+velocity);
-        Debug.Log("cVelocity："+cVelocity);
-    
+        
         character.controller.Move(currentVelocity * Time.deltaTime * playerSpeed + gravityVelocity * Time.deltaTime);
   
         if (velocity.sqrMagnitude>0)

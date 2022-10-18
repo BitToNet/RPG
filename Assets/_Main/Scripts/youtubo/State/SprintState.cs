@@ -11,8 +11,6 @@ public class SprintState : State
     Vector3 cVelocity;
     public SprintState(Character _character, StateMachine _stateMachine) : base(_character, _stateMachine)
     {
-        character = _character;
-        stateMachine = _stateMachine;
     }
  
     public override void Enter()
@@ -88,6 +86,16 @@ public class SprintState : State
         if (velocity.sqrMagnitude > 0)
         {
             character.transform.rotation = Quaternion.Slerp(character.transform.rotation, Quaternion.LookRotation(velocity), character.rotationDampTime);
+        }
+    }
+    
+    public override void Exit()
+    {
+        base.Exit();
+
+        if (velocity.sqrMagnitude > 0)
+        {
+            character.transform.rotation = Quaternion.LookRotation(velocity);
         }
     }
 }

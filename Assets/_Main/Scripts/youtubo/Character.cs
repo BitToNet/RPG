@@ -69,6 +69,8 @@ public class Character : MonoBehaviour
  
         normalColliderHeight = controller.height;
         gravityValue *= gravityMultiplier;
+        
+        Cursor.lockState = CursorLockMode.Locked;
     }
  
     private void Update()

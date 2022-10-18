@@ -27,8 +27,8 @@ public class EnemyDamageDealer : MonoBehaviour
             {    
                 if (hit.transform.TryGetComponent(out HealthSystem health))
                 {
-                    health.TakeDamage(weaponDamage);
                     health.HitVFX(hit.point);
+                    health.TakeDamage(weaponDamage);
                     hasDealtDamage = true;
                 }
             }

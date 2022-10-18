@@ -665,7 +665,7 @@ CapsuleCollider:
   m_Radius: 0.3
   m_Height: 1.8
   m_Direction: 1
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_Center: {x: 0, y: 0.95, z: 0}
 --- !u!114 &6378989496553426500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,9 +680,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   hitVFX: {fileID: 1743637094903878, guid: 021a2f7a2c5bc4449b4c64a66a050e8c, type: 3}
+  hitAudioSource: {fileID: 3761096567318084691, guid: 0d888436fcaaf4bb08b80603597022fe,
+    type: 3}
   ragdoll: {fileID: 97764563455741607, guid: f8773465253c24fd881839bdabe03630, type: 3}
-  attackCD: 3
-  attackRange: 1
+  attackCD: 1
+  attackRange: 2
   aggroRange: 4
 --- !u!195 &1415667248974029926
 NavMeshAgent:
