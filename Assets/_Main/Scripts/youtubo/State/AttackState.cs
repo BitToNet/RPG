@@ -16,7 +16,6 @@ public class AttackState : State
         base.Enter();
  
         attack = false;
-        character.animator.applyRootMotion = true;
         timePassed = 0f;
         character.animator.SetTrigger("attack");
         character.animator.SetFloat("speed", 0f);
@@ -53,10 +52,5 @@ public class AttackState : State
             character.animator.SetTrigger("move");
         }
  
-    }
-    public override void Exit()
-    {
-        base.Exit();
-        character.animator.applyRootMotion = false;
     }
 }

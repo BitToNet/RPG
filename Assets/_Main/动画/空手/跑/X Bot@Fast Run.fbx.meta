@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: e9ca012db8f604586bd4837783ef2a13
+guid: 3b53dd19938d5428ba0b1ae7525ecee3
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: combatRun
+    second: Fast Run
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: combatRun
+      name: Fast Run
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 21
+      lastFrame: 16
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
