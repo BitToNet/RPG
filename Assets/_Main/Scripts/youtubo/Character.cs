@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.InputSystem;
 public class Character : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class Character : MonoBehaviour
     public AttackState attacking;
  
     [HideInInspector]
-    public float gravityValue = -9.81f;
+    public float gravityValue = -0.01f;
     [HideInInspector]
     public float normalColliderHeight;
     [HideInInspector]
@@ -46,6 +47,8 @@ public class Character : MonoBehaviour
     public Animator animator;
     [HideInInspector]
     public Vector3 playerVelocity;
+    
+    private Transform tr;
  
  
     // Start is called before the first frame update
@@ -55,6 +58,7 @@ public class Character : MonoBehaviour
         animator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
         cameraTransform = Camera.main.transform;
+        tr = transform;
  
         movementSM = new StateMachine();
         standing = new StandingState(this, movementSM);
@@ -90,5 +94,16 @@ public class Character : MonoBehaviour
     {
         // 物理更新
         movementSM.currentState.PhysicsUpdate();
+    }
+
+    private void OnAnimatorMove()
+    {
+        // 将运动交给角色控制器，而不是root motion
+        // SimpleMove会自动计算重力
+        controller.SimpleMove(animator.velocity);
+        if (animator.velocity.y > 0.1)
+        {
+            Debug.Log("animator.velocity.y:"+animator.velocity);
+        }
     }
 }
