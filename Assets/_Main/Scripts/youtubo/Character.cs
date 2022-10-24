@@ -46,6 +46,8 @@ public class Character : MonoBehaviour
     [HideInInspector] public Transform cameraTransform;
     [HideInInspector] public Animator animator;
     [HideInInspector] public Vector3 playerVelocity;
+    // 状态转换中，此时再点切换无效
+    [HideInInspector] public bool isCombatStateChanging = false;
 
     private Transform tr;
 

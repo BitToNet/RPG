@@ -39,7 +39,7 @@ public class StandingState: State
             sprint = true;
         }
  
-        if (drawWeaponAction.triggered)
+        if (drawWeaponAction.triggered && !character.isCombatStateChanging)
         {
             drawWeapon = true;
         }

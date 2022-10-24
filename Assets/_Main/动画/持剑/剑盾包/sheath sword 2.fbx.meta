@@ -59,8 +59,8 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0
-        functionName: SheathWeapon
+      - time: 0.9937888
+        functionName: EndSheathWeapon
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

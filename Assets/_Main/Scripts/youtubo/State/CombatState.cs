@@ -24,7 +24,7 @@ public class CombatState : State
     {
         base.HandleInput();
  
-        if (drawWeaponAction.triggered)
+        if (drawWeaponAction.triggered && !character.isCombatStateChanging)
         {
             sheathWeapon = true;
         }
