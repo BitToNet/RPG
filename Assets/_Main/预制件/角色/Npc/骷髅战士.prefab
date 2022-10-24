@@ -685,7 +685,7 @@ MonoBehaviour:
   ragdoll: {fileID: 97764563455741607, guid: f8773465253c24fd881839bdabe03630, type: 3}
   attackCD: 2
   attackRange: 2
-  aggroRange: 8
+  aggroRange: 10
 --- !u!195 &1415667248974029926
 NavMeshAgent:
   m_ObjectHideFlags: 0

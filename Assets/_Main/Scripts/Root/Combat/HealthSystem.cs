@@ -10,15 +10,19 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] GameObject ragdoll;
  
     Animator animator;
+    private Character character;
+    
     void Start()
     {
         animator = GetComponent<Animator>();
+        character = transform.GetComponent<Character>();
     }
  
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
         animator.SetTrigger("damage");
+        character.isCombatStateChanging = false;
         // CameraShake.Instance.ShakeCamera(2f, 0.2f);
         CameraShake4FreeLook.Instance.ShakeCamera(2f, 0.2f);
         
